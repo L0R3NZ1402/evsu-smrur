@@ -1,0 +1,24 @@
+body {
+    font-family: 'Inter', sans-serif;
+    /* font-family: 'Poppins', sans-serif; */
+}
+
+#page-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #fff;
+    /* white background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1050;
+    transition: opacity 0.5s ease;
+}
+
+#page-loader.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}

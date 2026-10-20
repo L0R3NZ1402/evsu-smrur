@@ -1,0 +1,239 @@
+<!-- Universal Container -->
+<div class="flex h-screen bg-slate-50 text-slate-800 overflow-hidden">
+
+    <!-- Mobile Sidebar Overlay (Backdrop) -->
+    <div id="mobileOverlay"
+        class="fixed inset-0 bg-slate-900/40 backdrop-blur-xs z-20 md:hidden hidden opacity-0 transition-opacity duration-200">
+    </div>
+
+    <!-- Sidebar -->
+    <aside id="sidebar"
+        class="fixed md:static inset-y-0 left-0 z-30 flex flex-col bg-slate-900 text-slate-300 w-64 -translate-x-full md:translate-x-0 transition-all duration-300 ease-in-out shrink-0">
+
+        <!-- Sidebar Header / Logo -->
+        <div class="h-16 flex items-center justify-between px-4 border-b border-slate-800 shrink-0">
+            <div class="flex items-center gap-3 overflow-hidden">
+                <div
+                    class="w-9 h-9 rounded-xl bg-indigo-600 flex items-center justify-center text-white shrink-0 font-bold">
+                    <i class="bi bi-shield-lock-fill text-lg"></i>
+                </div>
+                <span
+                    class="sidebar-text font-bold text-white tracking-tight whitespace-nowrap transition-opacity duration-200">
+                    Admin Panel
+                </span>
+            </div>
+
+            <!-- Desktop Collapse Toggle Button -->
+            <button type="button"
+                class="hidden md:flex w-8 h-8 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white items-center justify-center transition-colors">
+                <i id="collapseIcon" class="bi bi-chevron-left"></i>
+            </button>
+
+            <!-- Mobile Close Button -->
+            <button type="button" class="toggleSideBarBTN md:hidden text-slate-400 hover:text-white">
+                <i class="bi bi-x-lg text-lg"></i>
+            </button>
+        </div>
+
+        <!-- Navigation Menu -->
+        <div class="flex-1 overflow-y-auto px-3 py-4 space-y-1">
+        
+            <!-- Dashboard -->
+            <button type="button" data-nav="dashboard"
+                class="navBtns w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-400 hover:bg-slate-800 hover:text-slate-200 font-medium text-xs transition-all text-left">
+                <i class="bi bi-grid-fill text-base shrink-0"></i>
+                <span class="sidebar-text whitespace-nowrap">Dashboard</span>
+            </button>
+        
+            <!-- User Management -->
+            <button type="button" data-nav="users"
+                class="navBtns w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-400 hover:bg-slate-800 hover:text-slate-200 font-medium text-xs transition-all text-left">
+                <i class="bi bi-people-fill text-base shrink-0"></i>
+                <span class="sidebar-text whitespace-nowrap">User Management</span>
+            </button>
+        
+            <!-- Room Management -->
+            <button type="button" data-nav="rooms"
+                class="navBtns w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-400 hover:bg-slate-800 hover:text-slate-200 font-medium text-xs transition-all text-left">
+                <i class="bi bi-building-fill text-base shrink-0"></i>
+                <span class="sidebar-text whitespace-nowrap">Room Management</span>
+            </button>
+        
+            <!-- Room Usage Logs -->
+            <button type="button" data-nav="logs"
+                class="navBtns w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-400 hover:bg-slate-800 hover:text-slate-200 font-medium text-xs transition-all text-left">
+                <i class="bi bi-gear-fill text-base shrink-0"></i>
+                <span class="sidebar-text whitespace-nowrap">Room Usage Logs</span>
+            </button>
+        
+        </div>
+
+        <!-- Sidebar Footer / Logout -->
+        <div class="p-3 border-t border-slate-800 shrink-0">
+            <a href="./?page=/signin"
+                class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-rose-400 hover:bg-rose-500/10 font-medium text-xs transition-all">
+                <i class="bi bi-box-arrow-right text-base shrink-0"></i>
+                <span class="sidebar-text whitespace-nowrap">Logout</span>
+            </a>
+        </div>
+
+    </aside>
+
+    <!-- Main Content Wrapper -->
+    <div class="flex-1 flex flex-col min-w-0 overflow-hidden">
+
+        <!-- Top Header -->
+        <header
+            class="h-16 bg-white border-b border-slate-200/80 px-4 sm:px-6 flex items-center justify-between shrink-0">
+
+            <!-- Left Header: Mobile Toggle & Page Title -->
+            <div class="flex items-center gap-3">
+                <button type="button"
+                    class="toggleSideBarBTN md:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors">
+                    <i class="bi bi-list text-xl"></i>
+                </button>
+
+                <h2 class="text-base sm:text-lg font-bold text-slate-800 tracking-tight">
+                    Dashboard
+                </h2>
+            </div>
+
+            <!-- Right Header: Admin User Info -->
+            <div class="flex items-center gap-3">
+                <div class="flex items-center gap-3">
+                    <div
+                        class="relative w-9 h-9 rounded-full bg-slate-200 overflow-hidden border border-slate-300/80 shrink-0">
+                        <img src="https://via.placeholder.com/150" alt="Admin Avatar"
+                            class="w-full h-full object-cover" />
+                    </div>
+                    <div class="hidden sm:block text-left">
+                        <p class="text-xs font-semibold text-slate-800 leading-none">System Admin</p>
+                        <p class="text-[10px] text-slate-500 mt-0.5">admin@system.com</p>
+                    </div>
+                </div>
+            </div>
+
+        </header>
+
+        <!-- Main Content Area -->
+        <main id="users-Section" class="navContent flex-1 overflow-y-auto p-4 sm:p-6 space-y-4">
+        
+            <!-- Section Title -->
+            <div class="flex items-center justify-between">
+                <div>
+                    <h1 class="text-base sm:text-lg font-bold text-slate-900 tracking-tight">Users Management</h1>
+                    <p class="text-xs text-slate-500">Tap a user row to expand and view account credentials</p>
+                </div>
+            </div>
+        
+            <!-- Search & Status Filter Toolbar -->
+            <div class="flex flex-row items-center justify-between gap-3 pt-1">
+                <!-- Search Input -->
+                <div class="relative flex-1 min-w-0 sm:flex-none sm:w-72">
+                    <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none text-slate-400">
+                        <i class="bi bi-search text-xs"></i>
+                    </span>
+                    <input id="searchUser" type="text" placeholder="Search user..."
+                        class="w-full pl-9 pr-4 py-2 text-xs rounded-xl bg-white border border-slate-200 text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 shadow-2xs" />
+                </div>
+        
+                <!-- Status Filter -->
+                <div class="flex items-center gap-2 shrink-0">
+                    <span class="text-xs text-slate-400 hidden sm:inline">Status:</span>
+                    <select id="searchUserStatus"
+                        class="px-3 py-2 text-xs rounded-xl bg-white border border-slate-200 text-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 shadow-2xs">
+                        <option value="">All Statuses</option>
+                        <option>Active</option>
+                        <option>Inactive</option>
+                        <option>Pending</option>
+                    </select>
+                </div>
+            </div>
+        
+            <!-- Table-Like Container Card -->
+            <div class="bg-white rounded-lg border border-slate-200/80 shadow-xs overflow-hidden">
+        
+                <!-- Grayish Background Table Header -->
+                <div
+                    class="bg-slate-100 px-4 py-2.5 border-b border-slate-200 text-xs font-semibold text-slate-500 tracking-wider">
+                    Users Directory
+                </div>
+        
+                <!-- User Rows Container -->
+                <div class="divide-y divide-slate-100" id="userListContainer">
+        
+                </div>
+            </div>
+        
+        </main>
+
+        <main id="rooms-Section" class="navContent hidden flex-1 overflow-y-auto p-4 sm:p-6 space-y-4">
+        
+            <!-- Section Title -->
+            <div class="flex items-center justify-between">
+                <div>
+                    <h1 class="text-base sm:text-lg font-bold text-slate-900 tracking-tight">Room Informations</h1>
+                    <p class="text-xs text-slate-500">Tap a room row to expand and view the room informations</p>
+                </div>
+            </div>
+        
+            <!-- Table-Like Container Card -->
+            <div class="bg-white rounded-lg border border-slate-200/80 shadow-xs overflow-hidden">
+        
+                <!-- Grayish Background Table Header -->
+                <div
+                    class="bg-slate-100 px-4 py-2.5 border-b border-slate-200 text-xs font-semibold text-slate-500 tracking-wider">
+                    Room Directory
+                </div>
+        
+                <!-- User Rows Container -->
+                <div class="divide-y divide-slate-100" id="roomListContainer">
+        
+                </div>
+            </div>
+        
+        </main>
+
+        <main id="logs-Section" class="navContent hidden flex-1 overflow-y-auto p-4 sm:p-6 space-y-4">
+        
+            <!-- Section Title -->
+            <div class="flex items-center justify-between">
+                <div>
+                    <h1 class="text-base sm:text-lg font-bold text-slate-900 tracking-tight">Room Logs</h1>
+                    <p class="text-xs text-slate-500">Tap a room row to expand and view the room usage logs</p>
+                </div>
+            </div>
+        
+            <!-- Search & Status Filter Toolbar -->
+            <div class="flex flex-row items-center justify-between gap-3 pt-1">
+                <!-- Search Input -->
+                <div class="relative flex-1 min-w-0 sm:flex-none sm:w-72">
+                    <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none text-slate-400">
+                        <i class="bi bi-search text-xs"></i>
+                    </span>
+                    <input id="searchLogs" type="text" placeholder="Search date or room..."
+                        class="w-full pl-9 pr-4 py-2 text-xs rounded-xl bg-white border border-slate-200 text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 shadow-2xs" />
+                </div>
+            </div>
+        
+            <!-- Table-Like Container Card -->
+            <div class="bg-white rounded-lg border border-slate-200/80 shadow-xs overflow-hidden">
+        
+                <!-- Grayish Background Table Header -->
+                <div
+                    class="bg-slate-100 px-4 py-2.5 border-b border-slate-200 text-xs font-semibold text-slate-500 tracking-wider">
+                    Room Logs Directory
+                </div>
+        
+                <!-- User Rows Container -->
+                <div class="divide-y divide-slate-100" id="logListContainer">
+        
+                </div>
+            </div>
+        
+        </main>
+
+        
+
+    </div>
+</div>

@@ -1,0 +1,78 @@
+<!-- Universal Flat Container -->
+<div
+    class="h-screen max-h-screen flex flex-col justify-between bg-slate-900 text-slate-100 p-6 relative overflow-hidden">
+
+    <!-- Subtle Background Accent Glows -->
+    <div class="absolute -top-24 -left-24 w-72 h-72 bg-indigo-600/20 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute -bottom-24 -right-24 w-72 h-72 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none">
+    </div>
+
+    <!-- SECTION 1: HEADER -->
+    <header
+        class="relative z-10 text-center py-4 px-3 bg-slate-800/60 backdrop-blur-md rounded-2xl border border-slate-700/50 shadow-lg space-y-1">
+        <div class="inline-flex items-center gap-2 mb-0.5">
+            <div class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></div>
+            <h1 class="text-xl font-black tracking-wider text-white uppercase">EVSU-SMRUR</h1>
+        </div>
+        <p class="text-[10px] text-indigo-300 font-semibold tracking-widest uppercase">Smart Room Usage Recorder</p>
+    </header>
+
+    <!-- SECTION 2: LOGIN div (MIDDLE) -->
+    <main class="relative z-10 w-full max-w-xs mx-auto my-auto space-y-6">
+
+        <!-- Section Badge & Title -->
+        <div class="text-center space-y-2">
+            <h2 class="text-xl font-extrabold tracking-tight text-white uppercase">Sign In</h2>
+            <p class="text-xs text-slate-400">Enter your credentials to manage room access</p>
+        </div>
+
+        <!-- Login div -->
+        <div class="space-y-4" onsubmit="event.preventDefault();">
+
+            <!-- Username Field -->
+            <div class="space-y-1">
+                <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider"
+                    for="signin-username">
+                    Username <span class="text-rose-400">*</span>
+                </label>
+                <div class="relative">
+                    <input type="text" id="signin-username" placeholder="Enter username"
+                        class="w-full px-3.5 py-3 text-xs rounded-xl bg-slate-800/80 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition duration-150"
+                        required />
+                </div>
+            </div>
+
+            <!-- Password Field -->
+            <div class="space-y-1">
+                <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider"
+                    for="signin-password">
+                    Password <span class="text-rose-400">*</span>
+                </label>
+                <div class="relative">
+                    <input type="password" id="signin-password" placeholder="••••••••"
+                        class="w-full px-3.5 py-3 text-xs rounded-xl bg-slate-800/80 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition duration-150"
+                        required />
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="button" id="signinBtn"
+                class="w-full py-3 px-4 mt-2 bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 text-white font-bold text-xs uppercase tracking-wider rounded-xl shadow-lg shadow-indigo-600/30 transition duration-150 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-slate-900">
+                Access Portal
+            </button>
+        </div>
+        <div class="text-center pt-2">
+            <p class="text-xs">
+                Already have an account?
+                <a href="./?page=/signup" class="font-medium text-indigo-400 hover:text-indigo-500 transition-colors">Sign in</a>
+            </p>
+        </div>
+    </main>
+
+    <!-- SECTION 3: FOOTER -->
+    <footer
+        class="relative z-10 text-center py-3 border-t border-slate-800/80 text-[10px] text-slate-500 tracking-tight">
+        developed by: <span class="font-semibold text-indigo-400">"The Goated Part-timers of EVSU IT Dept"</span>
+    </footer>
+
+</div>

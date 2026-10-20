@@ -1,0 +1,87 @@
+<div id="containerParent" class="log-data" data-log="">
+    <div class="divide-y divide-slate-100">
+    
+        <!-- Single User Row Item -->
+        <div class="bg-slate-50/30 transition-colors userItem border-b border-slate-100 last:border-b-0" id="userRow">
+    
+            <!-- Row Summary (Parent Data) -->
+            <div
+                class="grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-4 px-5 py-4 items-center cursor-pointer hover:bg-slate-50/50 transition-colors">
+    
+                <!-- Name & User ID -->
+                <div class="md:col-span-4 flex items-center gap-3">
+                    <!-- 1st item: Avatar -->
+                    <div id="user_avatar" class="w-8 h-8 bg-slate-200 rounded-xl border flex items-center justify-center font-bold text-xs shrink-0">
+                        <i class="bi bi-clock"></i>
+                    </div>
+    
+                    <!-- 2nd item: User details -->
+                    <div class="min-w-0 flex-1">
+                        <h4 class="font-bold text-slate-800 text-xs truncate" id="room_name">
+                            Room 1
+                        </h4>
+                        <p class="text-[11px] text-slate-400 font-mono" id="log_date">
+                            Jan 1, 2026
+                        </p>
+                    </div>
+    
+                    <!-- 3rd item: Right-aligned button -->
+                    <div class="shrink-0 ml-auto">
+                        <button type="button" id="logExpandDetails"
+                            class="w-7 h-7 rounded-lg bg-slate-100 text-slate-500 hover:bg-indigo-50 hover:text-indigo-600 transition-colors inline-flex items-center justify-center">
+                            <i class="bi bi-chevron-down text-xs" id="logExpandDetailsIcon"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Collapsible Details Wrapper (Hidden by default) -->
+            <div class="hidden overflow-hidden transition-[height] duration-300 ease-in-out" id="logDetailsWrapper">
+            
+                <div class="px-5 pb-5 pt-3 border-t border-slate-200/60 bg-slate-50/70 space-y-4" id="logDetailsContainer">
+            
+                    <!-- Header -->
+                    <div
+                        class="flex items-center justify-between pb-2 border-b border-slate-200/60 text-xs font-bold text-slate-700">
+                        <span>Usage Details</span>
+                    </div>
+            
+                    <!-- Usage Information -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
+            
+                        <!-- User -->
+                        <div>
+                            <span class="text-gray-500 dark:text-gray-400">Used By</span>
+                            <span id="log_used_by" class="block mt-1 font-bold text-gray-800 dark:text-gray-200">
+                                John Doe
+                            </span>
+                            <span id="log_user_department" class="block text-xxs font-medium text-slate-400">
+                                Department
+                            </span>
+                        </div>
+            
+                        <!-- Start Time -->
+                        <div>
+                            <span class="text-gray-500 dark:text-gray-400">Started At</span>
+                            <span id="log_started_at" class="block mt-1 font-semibold text-gray-800 dark:text-gray-200">
+                                January 1, 2026 12:30 PM
+                            </span>
+                        </div>
+            
+                        <!-- End Time -->
+                        <div>
+                            <span class="text-gray-500 dark:text-gray-400">Ended At</span>
+                            <span id="log_ended_at" class="block mt-1 font-semibold text-gray-800 dark:text-gray-200">
+                                January 1, 2026 2:30 PM
+                            </span>
+                        </div>
+            
+                    </div>
+            
+                </div>
+            </div>
+    
+        </div>
+    
+    </div>
+</div>

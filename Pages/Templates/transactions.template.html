@@ -1,0 +1,90 @@
+<div class="bg-slate-50/30 transition-colors productItem" id="transactionRow">
+
+    <!-- Row Summary (Parent Data) -->
+    <div
+        class="grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-4 px-5 py-4 items-center cursor-pointer hover:bg-slate-50/50 transition-colors">
+        <div class="md:col-span-3 flex items-center gap-3">
+            <div
+                class="w-8 h-8 rounded-xl bg-orange-50 text-orange-600 border border-orange-100 flex items-center justify-center shrink-0">
+                <i class="bi bi-receipt text-sm"></i>
+            </div>
+            <div>
+                <h4 class="font-bold text-slate-800 font-mono text-xs" id="transactionNo">#TRX-2026-8801</h4>
+                <p class="text-[11px] text-slate-400" id="transactionCashier">Cashier: Jane Doe.</p>
+            </div>
+        </div>
+
+        <div class="md:col-span-2 text-xs text-slate-600 font-medium">
+            <span id="transactionDate">Aug 15, 2026</span>
+            <span id="transactionTime" class="block text-[10px] text-slate-400 font-mono">10:24 AM</span>
+        </div>
+
+        <div class="md:col-span-2">
+            <span
+                class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-100 text-slate-700 font-semibold text-xs">
+                <i class="bi bi-cash-stack text-emerald-600"></i> Cash
+            </span>
+        </div>
+
+        <div class="md:col-span-2 md:text-right font-mono font-bold text-slate-800">
+            <span id="transactionAmount">$26.50</span>
+            <span class="block text-[10px] text-slate-400 font-normal" id="transactionItems">3 Items</span>
+        </div>
+
+        <div class="md:col-span-2 text-left md:text-center">
+            <span
+                class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200/80 font-bold text-[10px] uppercase">
+                <i class="bi bi-check-circle-fill text-[9px]"></i> Completed
+            </span>
+        </div>
+
+        <div class="md:col-span-1 text-right">
+            <button type="button" id="transactionExpandDetails"
+                class="w-7 h-7 rounded-lg bg-slate-100 text-slate-500 hover:bg-orange-50 hover:text-orange-600 transition-colors inline-flex items-center justify-center">
+                <i class="bi bi-chevron-up text-xs" id="transactionExpandDetailsIcon"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="hidden overflow-hidden transition-[height] duration-300 ease-in-out" id="transactionDetailsWrapper">
+    
+        <div class="px-5 pb-5 pt-2 border-t border-slate-200/60 bg-slate-50/50" id="transactionDetailsContainer">
+    
+            <div class="bg-white rounded-xl border border-slate-200/80 p-4 shadow-sm space-y-3">
+    
+                <div
+                    class="flex items-center justify-between pb-2 border-b border-slate-100 text-xs font-bold text-slate-700">
+                    <span>Purchased Products</span>
+    
+                    <span class="text-slate-400 font-mono font-normal text-[11px]" id="transactionSubtotal">
+                        Subtotal: $26.50 | Tax: $0.00
+                    </span>
+                </div>
+    
+                <div class="space-y-2" id="transactionItemsList">
+                </div>
+    
+                <div class="pt-2 border-t border-slate-100 flex flex-wrap justify-between items-center
+                           text-xs text-slate-500 font-mono bg-slate-50/80 p-2.5 rounded-lg">
+    
+                    <div>
+                        Cash Tendered:
+                        <strong class="text-slate-700" id="transactionCashTendered">
+                            $30.00
+                        </strong>
+                    </div>
+    
+                    <div>
+                        Change Returned:
+                        <strong class="text-emerald-700" id="transactionChangeReturned">
+                            $3.50
+                        </strong>
+                    </div>
+    
+                </div>
+    
+            </div>
+        </div>
+    </div>
+
+</div>

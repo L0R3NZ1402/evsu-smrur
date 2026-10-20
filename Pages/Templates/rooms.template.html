@@ -1,0 +1,119 @@
+<div id="containerParent">
+    <div class="divide-y divide-slate-100">
+    
+        <!-- Single User Row Item -->
+        <div class="bg-slate-50/30 transition-colors userItem border-b border-slate-100 last:border-b-0" id="userRow">
+    
+            <!-- Row Summary (Parent Data) -->
+            <div
+                class="grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-4 px-5 py-4 items-center cursor-pointer hover:bg-slate-50/50 transition-colors">
+    
+                <!-- Name & User ID -->
+                <div class="md:col-span-4 flex items-center gap-3">
+                    <!-- 1st item: Avatar -->
+                    <div id="room_avatar" class="w-8 h-8 rounded-xl border flex items-center justify-center font-bold text-xs shrink-0">
+                        JD
+                    </div>
+    
+                    <!-- 2nd item: User details -->
+                    <div class="min-w-0 flex-1">
+                        <h4 class="font-bold text-slate-800 text-xs truncate" id="room_name">
+                            John Doe
+                        </h4>
+                        <p class="text-[11px] text-slate-400 font-mono" id="room_location">
+                            Human Resources
+                        </p>
+                    </div>
+    
+                    <!-- 3rd item: Right-aligned button -->
+                    <div class="shrink-0 ml-auto">
+                        <button type="button" id="roomExpandDetails"
+                            class="w-7 h-7 rounded-lg bg-slate-100 text-slate-500 hover:bg-indigo-50 hover:text-indigo-600 transition-colors inline-flex items-center justify-center">
+                            <i class="bi bi-chevron-down text-xs" id="roomExpandDetailsIcon"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Collapsible Details Wrapper (Hidden by default) -->
+            <div class="hidden overflow-hidden transition-[height] duration-300 ease-in-out" id="roomDetailsWrapper">
+            
+                <div class="px-5 pb-5 pt-3 border-t border-slate-200/60 bg-slate-50/70 space-y-4" id="roomDetailsContainer">
+            
+                    <!-- Header Title inside expanded wrapper -->
+                    <div
+                        class="flex items-center justify-between pb-2 border-b border-slate-200/60 text-xs font-bold text-slate-700">
+                        <span>Account and Actions</span>
+                    </div>
+            
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+                    
+                        <!-- Usage Information: hide this entire div when needed -->
+                        <div id="roomUsageInfo" class="hidden sm:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <div>
+                                <span class="text-gray-500 dark:text-gray-400">In Use By</span>
+                                <span id="room_in_use_by" class="block mt-1 font-bold text-gray-800 dark:text-gray-200">
+                                    John Doe
+                                </span>
+                                <span id="user_department" class="block text-xxs font-medium text-slate-400 dark:text-gray-200">
+                                    John Doe
+                                </span>
+                            </div>
+                    
+                            <div>
+                                <span class="text-gray-500 dark:text-gray-400">Time of Usage</span>
+                                <span id="room_usage_time" class="block mt-1 font-semibold text-gray-800 dark:text-gray-200">
+                                    Oct 20, 2026 · 10:30 AM
+                                </span>
+                            </div>
+                        </div>
+                    
+                        <!-- Status: remains visible -->
+                        <div>
+                            <span class="text-gray-500 dark:text-gray-400">Status</span>
+                    
+                            <div class="mt-1">
+                                <span id="room_status_badge_vacant"
+                                    class="hidden inline-flex items-center gap-1 rounded-full bg-emerald-100 px-2 py-1 text-xs font-medium text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400">
+                                    <i class="bi bi-check-circle-fill"></i>
+                                    Vacant
+                                </span>
+                    
+                                <span id="room_status_badge_inuse"
+                                    class="hidden inline-flex items-center gap-1 rounded-full bg-rose-100 px-2 py-1 text-xs font-medium text-rose-700 dark:bg-rose-900/30 dark:text-rose-400">
+                                    <i class="bi bi-person-fill"></i>
+                                    In Use
+                                </span>
+                            </div>
+                        </div>
+                    
+                    </div>
+            
+                  
+                    <div class="pt-3 border-t border-slate-200/60 flex flex-wrap items-center justify-end gap-2">
+                        <button type="button" id="btnUseRoom"
+                            class="hidden inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-200/80 text-xs font-semibold transition-colors active:scale-95">
+                            <i class="bi bi-box-arrow-in-right text-xs"></i>
+                            <span>Use Room</span>
+                        </button>
+                        
+                        <button type="button" id="btnEndUsage"
+                            class="hidden inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200/80 text-xs font-semibold transition-colors active:scale-95">
+                            <i class="bi bi-box-arrow-left text-xs"></i>
+                            <span>End Usage</span>
+                        </button>
+
+                        <button type="button" id="btnOverrideEndUsage"
+                            class="hidden inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200/80 text-xs font-semibold transition-colors active:scale-95">
+                            <i class="bi bi-box-arrow-left text-xs"></i>
+                            <span>Override End Usage</span>
+                        </button>
+                    </div>
+            
+                </div>
+            </div>
+    
+        </div>
+    
+    </div>
+</div>
